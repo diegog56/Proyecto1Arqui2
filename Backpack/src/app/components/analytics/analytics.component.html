@@ -1,0 +1,64 @@
+<div class="container">
+  <ngb-tabset [destroyOnHide]="false">
+    <ngb-tab title="Promedios">
+      <ng-template ngbTabContent>
+        <div>
+          <div>
+            <div style="display: block">
+              <canvas baseChart
+                [datasets]="radarChartData"
+                [options]="radarChartOptions"
+                [labels]="radarChartLabels"
+                [chartType]="radarChartType">
+              </canvas>
+            </div>
+          </div>
+      </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Pasos">
+      <ng-template ngbTabContent>
+        <div>
+          <div>
+            <div style="display: block">
+              <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Ritmo Cardiaco">
+       
+<ng-template ngbTabContent>
+  <fusioncharts
+          [type]="type"
+          [width]="width"
+          [height]="height"
+          [dataSource]="dataSource"
+        ></fusioncharts>
+</ng-template>
+    </ngb-tab>
+    <ngb-tab title="Ubicacion">
+      <ng-template ngbTabContent>
+        <div #mapContainer id="map"></div>
+      </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Relaciones">
+            <ng-template ngbTabContent>
+              <fusioncharts
+                      [type]="type"
+                      [width]="width"
+                      [height]="height"
+                      [dataSource]="dataSource"
+                    ></fusioncharts>
+            </ng-template>
+                </ngb-tab>
+  </ngb-tabset>
+</div>

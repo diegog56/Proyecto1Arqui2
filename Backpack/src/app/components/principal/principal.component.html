@@ -1,0 +1,59 @@
+<div class="container">
+      <p>Datos recolectados se pueden filtrar por el dato que desee.</p>
+      <form>
+        <div class="form-group form-inline">
+          Buscar: <input class="form-control ml-2" type="text" [formControl]="filter"/> <!-- [formControl]="filter"-->
+        </div>
+      </form>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Fecha</th> <!--date needs formatting-->
+            <th scope="col">Hora</th> <!--time needs formatting-->
+            <th scope="col">Ubicacion</th> <!--location.latitude.longitude.height-->
+            <th scope="col">Pasos</th> <!--steps-->
+            <th scope="col">Pulso Cardiaco</th> <!--BPM-->
+            <th scope="col">Peso</th> <!--weight-->
+            <th scope="col">Posicion</th> <!--position-->
+            <th scope="col">Luminosidad</th> <!--luminousIntensity-->
+            <th scope="col">Sonido</th> <!--soundIntensity-->
+            <th scope="col">Agua</th> <!--water-->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tuple of data$ | async; index as i"> <!--of data$ change observable for filtering-->
+            <td>
+              <ngb-highlight [result]="tuple.date.split('T')[0]" [term]="filter.value"></ngb-highlight>
+            </td>
+            <td>
+              <ngb-highlight [result]="tuple.date.split('T')[1].split('.')[0]" [term]="filter.value"></ngb-highlight>
+            </td>
+            <td>
+                {{tuple['location'].latitude}} {{tuple['location'].longitude}} {{tuple['location'].height}}
+            </td>
+            <td>
+                {{tuple.steps}}
+            </td>
+            <td>
+                {{tuple.BPM}}
+            </td>
+            <td>
+                {{tuple.weight}}
+            </td>
+            <td>
+                {{tuple.position}}
+            </td>
+            <td>
+                {{tuple.luminousIntensity}}
+            </td>
+            <td>
+                {{tuple.soundIntensity}}
+            </td>
+            <td>
+                {{tuple.water}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
