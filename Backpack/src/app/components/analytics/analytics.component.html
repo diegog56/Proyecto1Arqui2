@@ -32,6 +32,36 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-6">
+            Fecha:
+            <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+            </ngb-datepicker>
+            
+            <ng-template #t let-date let-focused="focused">
+              <span class="custom-day"
+                    [class.focused]="focused"
+                    [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)"
+                    (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null">
+                {{ date.day }}
+              </span>
+            </ng-template>
+          </div>
+          <div class="col-md-4">
+            Filtrar por:
+            <select class="btn-primary" [(ngModel)]="filteroption">
+              <option value="%Y-%m">Mes</option>
+              <option value="%Y-%m-%d" selected>Dia</option>
+              <option value="%Y-%m-%d:%H">Hora</option>
+              <option value="%Y-%m-%d:%H:%M">Minutos</option>
+            </select>
+            <br>
+            <br>
+            <button class="btn btn-success" (click)="filterSteps()">Filtrar</button>
+          </div>
+        </div>
       </ng-template>
     </ngb-tab>
     <ngb-tab title="Ritmo Cardiaco">
@@ -62,3 +92,7 @@
                 </ngb-tab>
   </ngb-tabset>
 </div>
+
+<hr>
+<br>
+<br>

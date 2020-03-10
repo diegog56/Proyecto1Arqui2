@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ElementRef, NgZone } from '@angular/core';
 import { ChartDataSets, ChartType, RadialChartOptions, ChartOptions } from 'chart.js';
 import { Label, Color, BaseChartDirective } from 'ng2-charts';
+import {NgbDate, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import * as pluginAnnotations from 'chartjs-plugin-annotation'; 
 import * as FusionCharts from 'fusioncharts';
+import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-analytics',
   templateUrl: './analytics.component.html',
@@ -22,7 +24,62 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
   ];
   public radarChartType: ChartType = 'radar';
 
-  //BAR CHART
+  //BAR CHART STEPS
+  filteroption:string="%Y-%m-%d";
+  steps:any=[];
+  hoveredDate: NgbDate;
+
+  fromDate: NgbDate;
+  toDate: NgbDate;
+
+  filterSteps(){
+    if(this.toDate!=null){
+      let start=this.fromDate.year+'-'+this.fromDate.month+'-'+this.fromDate.day;
+      let end=this.toDate.year+'-'+this.toDate.month+'-'+this.toDate.day;
+      console.log(start);
+      console.log(end);
+      console.log(this.filteroption);
+      this.service.getFilteredSteps(start,end,this.filteroption).subscribe(
+        res=>{
+          this.steps=res;
+          console.log(this.steps);
+          this.barChartData = [
+            { data: [], label: 'Pasos' }
+          ];
+          this.barChartLabels= [];
+          for(let step of this.steps){
+            this.barChartData[0]['data'].push(step.totalStep);
+            this.barChartLabels.push(step._id);
+          }
+        },
+        err => console.log(err)
+      )
+    }else alert("Fecha final incorrecta");
+  }
+
+  onDateSelection(date: NgbDate) {
+    if (!this.fromDate && !this.toDate) {
+      this.fromDate = date;
+    } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
+      this.toDate = date;
+    } else {
+      this.toDate = null;
+      this.fromDate = date;
+    }
+  }
+
+  isHovered(date: NgbDate) {
+    return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
+  }
+
+  isInside(date: NgbDate) {
+    return date.after(this.fromDate) && date.before(this.toDate);
+  }
+
+  isRange(date: NgbDate) {
+    return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
+  }
+
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
@@ -152,20 +209,20 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
 
   @ViewChild('mapContainer', {static: false}) gmap: ElementRef;
   map: google.maps.Map;
-  lat = 40.730610;
-  lng = -73.935242;
+  lat = 14.607815;
+  lng = -90.55173;
   markers = [ //data for map info goes in title
-    {
-      position: new google.maps.LatLng(14.60804, -90.55167),
-      map: this.map,
-      title: "Marker 1"
-    },
-    {
-      position: new google.maps.LatLng(14.61,-90.55),
-      map: this.map,
-      title: "Marker 2"
-    }
   ];
+  setMarkers(){
+    for(let marker of this.fulldata){
+      let t = {
+        position: new google.maps.LatLng(marker['location'].latitude,marker['location'].longitude),
+        map: this.map,
+        title: marker.date
+      };
+      this.markers.push(t);
+    }
+  }
   coordinates = new google.maps.LatLng(this.lat, this.lng);
   mapOptions: google.maps.MapOptions = {
     center: this.coordinates,
@@ -177,7 +234,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
     this.loadAllMarkers();
   }
   ngAfterViewInit() {
-    this.mapInitializer();
+    
   }
   marker = new google.maps.Marker({
     position: this.coordinates,
@@ -211,8 +268,43 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
   type: string;
   width: string;
   height: string;
+  fulldata:any=[];
 
-  constructor() {
+  constructor(private service:ApiService, calendar: NgbCalendar) {
+    this.fromDate = calendar.getToday();
+    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+    this.fromDate.year=2020;
+    this.fromDate.month=3;
+    this.fromDate.day=8;
+    this.toDate.year=2020;
+    this.toDate.month=3;
+    this.toDate.day=10;
+    this.service.getData().subscribe(
+      res => {
+        for (let key in res) {
+          if (res.hasOwnProperty(key)) {
+              this.fulldata.push(res[key]);
+          }
+        }
+        this.setMarkers();
+        this.mapInitializer();
+      },
+      err => console.log(err) 
+    )
+    this.service.getSteps().subscribe(
+      res => {
+        this.steps=res;
+        this.barChartData = [
+          { data: [], label: 'Pasos' }
+        ];
+        this.barChartLabels= [];
+        for(let step of this.steps){
+          this.barChartData[0]['data'].push(step.totalStep);
+          this.barChartLabels.push(step._id);
+        }
+      },
+      err => console.log(err)
+    )
     this.type = 'timeseries';
     this.width = '100%';
     this.height = '400';

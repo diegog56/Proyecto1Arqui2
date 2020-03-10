@@ -13,4 +13,12 @@ export class ApiService {
   getData(){
     return this.http.get(`${this.API_URI}api/Record`);
   }
+
+  getSteps(){
+    return this.http.get(`${this.API_URI}api/Steps/`);
+  }
+
+  getFilteredSteps(start,end,format){
+    return this.http.get(`${this.API_URI}api/Steps/?start=${start}&end=${end}&format=${format}`);
+  }
 }
