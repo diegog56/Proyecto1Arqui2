@@ -156,12 +156,12 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
   lng = -73.935242;
   markers = [ //data for map info goes in title
     {
-      position: new google.maps.LatLng(40.73061, 73.935242),
+      position: new google.maps.LatLng(14.60804, -90.55167),
       map: this.map,
       title: "Marker 1"
     },
     {
-      position: new google.maps.LatLng(32.06485, 34.763226),
+      position: new google.maps.LatLng(14.61,-90.55),
       map: this.map,
       title: "Marker 2"
     }
@@ -256,207 +256,207 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
     //var jsonify = res => res.json();
     var dataFetch = [
       [
-        "3/10/2004 18:00:00",
+        "3/09/2020 18:00:00",
         2.6,
         150,
         11.9,
         113,
-        13.6
+        79
       ],
       [
-        "3/10/2004 19:00:00",
+        "3/09/2020 19:00:00",
         2,
         112,
         9.4,
         92,
-        13.3
+        88
       ],
       [
-        "3/10/2004 20:00:00",
+        "3/09/2020 20:00:00",
         2.2,
-        88,
+        66,
         9,
         114,
-        11.9
+        67
       ],
       [
-        "3/10/2004 21:00:00",
+        "3/09/2020 21:00:00",
         2.2,
         80,
         9.2,
         122,
-        11
+        67
       ],
       [
-        "3/10/2004 22:00:00",
+        "3/09/2020 22:00:00",
         1.6,
         51,
         6.5,
         116,
-        11.2
+        66
       ],
       [
-        "3/10/2004 23:00:00",
+        "3/09/2020 23:00:00",
         1.2,
         38,
         4.7,
         96,
-        11.2
+        90
       ],
       [
-        "3/11/2004 0:00:00",
+        "3/10/2020 0:00:00",
         1.2,
         31,
         3.6,
         77,
-        11.3
+        82
       ],
       [
-        "3/11/2004 1:00:00",
+        "3/10/2020 1:00:00",
         1,
         31,
         3.3,
         76,
-        10.7
+        66
       ],
       [
-        "3/11/2004 2:00:00",
+        "3/10/2020 2:00:00",
         0.9,
         24,
         2.3,
         60,
-        10.7
+        78
       ],
       [
-        "3/11/2004 3:00:00",
+        "3/10/2020 3:00:00",
         0.6,
         19,
         1.7,
         45,
-        10.3
+        77
       ],
       [
-        "3/11/2004 4:00:00",
+        "3/10/2020 4:00:00",
         2,
         14,
         1.3,
         34,
-        10.1
+        85
       ],
       [
-        "3/11/2004 5:00:00",
+        "3/10/2020 5:00:00",
         0.7,
         8,
         1.1,
         28,
-        11
+        67
       ],
       [
-        "3/11/2004 6:00:00",
+        "3/10/2020 6:00:00",
         0.7,
         16,
         1.6,
         48,
-        10.5
+        76
       ],
       [
-        "3/11/2004 7:00:00",
+        "3/10/2020 7:00:00",
         1.1,
         29,
         3.2,
         82,
-        10.2
+        76
       ],
       [
-        "3/11/2004 8:00:00",
+        "3/10/2020 8:00:00",
         2,
         64,
         8,
         112,
-        10.8
+        87
       ],
       [
-        "3/11/2004 9:00:00",
+        "3/10/2020 9:00:00",
         2.2,
         87,
         9.5,
         101,
-        10.5
+        110
       ],
       [
-        "3/11/2004 10:00:00",
+        "3/10/2020 10:00:00",
         1.7,
         77,
         6.3,
         98,
-        10.8
+        120
       ],
       [
-        "3/11/2004 11:00:00",
+        "3/10/2020 11:00:00",
         1.5,
         43,
         5,
         92,
-        10.5
+        110
       ],
       [
-        "3/11/2004 12:00:00",
+        "3/10/2020 12:00:00",
         1.6,
         61,
         5.2,
         95,
-        9.5
+        65
       ],
       [
-        "3/11/2004 13:00:00",
+        "3/10/2020 13:00:00",
         1.9,
         63,
         7.3,
         112,
-        8.3
+        50
       ],
       [
-        "3/11/2004 14:00:00",
+        "3/10/2020 14:00:00",
         2.9,
         164,
         11.5,
         128,
-        8
+        45
       ],
       [
-        "3/11/2004 15:00:00",
+        "3/10/2020 15:00:00",
         2.2,
         79,
         8.8,
         126,
-        8.3
+        52
       ],
       [
-        "3/11/2004 16:00:00",
+        "3/10/2020 16:00:00",
         2.2,
         95,
         8.3,
         131,
-        9.7
+        56
       ],
       [
-        "3/11/2004 17:00:00",
+        "3/10/2020 17:00:00",
         2.9,
         150,
         11.2,
         135,
-        9.8
+        78
       ],
       [
-        "3/11/2004 18:00:00",
+        "3/10/2020 18:00:00",
         4.8,
         307,
         20.8,
         151,
-        10.3
+        89
       ],
       [
-        "3/11/2004 19:00:00",
+        "3/10/2020 19:00:00",
         6.9,
         461,
         27.4,
@@ -464,7 +464,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         9.7
       ],
       [
-        "3/11/2004 20:00:00",
+        "3/10/2020 20:00:00",
         6.1,
         401,
         24,
@@ -472,7 +472,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         9.6
       ],
       [
-        "3/11/2004 21:00:00",
+        "3/10/2020 21:00:00",
         3.9,
         197,
         12.8,
@@ -480,7 +480,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         9.1
       ],
       [
-        "3/11/2004 22:00:00",
+        "3/10/2020 22:00:00",
         1.5,
         61,
         4.7,
@@ -488,7 +488,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         8.2
       ],
       [
-        "3/11/2004 23:00:00",
+        "3/10/2020 23:00:00",
         1,
         26,
         2.6,
@@ -496,7 +496,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         8.2
       ],
       [
-        "3/12/2004 0:00:00",
+        "3/11/2020 0:00:00",
         1.7,
         55,
         5.9,
@@ -504,7 +504,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         8.3
       ],
       [
-        "3/12/2004 1:00:00",
+        "3/11/2020 1:00:00",
         1.9,
         53,
         6.4,
@@ -512,7 +512,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         7.7
       ],
       [
-        "3/12/2004 2:00:00",
+        "3/11/2020 2:00:00",
         1.4,
         40,
         4.1,
@@ -520,7 +520,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         7.1
       ],
       [
-        "3/12/2004 3:00:00",
+        "3/11/2020 3:00:00",
         0.8,
         21,
         1.9,
@@ -528,7 +528,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         7
       ],
       [
-        "3/12/2004 4:00:00",
+        "3/11/2020 4:00:00",
         5,
         10,
         1.1,
@@ -536,7 +536,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         6.1
       ],
       [
-        "3/12/2004 5:00:00",
+        "3/11/2020 5:00:00",
         0.6,
         7,
         1,
@@ -544,7 +544,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         6.3
       ],
       [
-        "3/12/2004 6:00:00",
+        "3/11/2020 6:00:00",
         0.8,
         17,
         1.8,
@@ -552,7 +552,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         6.8
       ],
       [
-        "3/12/2004 7:00:00",
+        "3/11/2020 7:00:00",
         1.4,
         33,
         4.4,
@@ -560,7 +560,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         6.4
       ],
       [
-        "3/12/2004 8:00:00",
+        "3/11/2020 8:00:00",
         4.4,
         202,
         17.9,
@@ -568,7 +568,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         7.3
       ],
       [
-        "3/12/2004 9:00:00",
+        "3/11/2020 9:00:00",
         1,
         142,
         22.1,
@@ -576,7 +576,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         9.2
       ],
       [
-        "3/12/2004 10:00:00",
+        "3/11/2020 10:00:00",
         3.1,
         208,
         14,
@@ -584,7 +584,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         13.2
       ],
       [
-        "3/12/2004 11:00:00",
+        "3/11/2020 11:00:00",
         2.7,
         166,
         11.6,
@@ -592,7 +592,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         14.3
       ],
       [
-        "3/12/2004 12:00:00",
+        "3/11/2020 12:00:00",
         2.1,
         114,
         10.2,
@@ -600,7 +600,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         15
       ],
       [
-        "3/12/2004 13:00:00",
+        "3/11/2020 13:00:00",
         2.5,
         140,
         11,
@@ -608,7 +608,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         16.1
       ],
       [
-        "3/12/2004 14:00:00",
+        "3/11/2020 14:00:00",
         2.7,
         169,
         12.8,
@@ -616,7 +616,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         16.3
       ],
       [
-        "3/12/2004 15:00:00",
+        "3/11/2020 15:00:00",
         2.9,
         185,
         14.2,
@@ -624,7 +624,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         15.8
       ],
       [
-        "3/12/2004 16:00:00",
+        "3/11/2020 16:00:00",
         2.8,
         165,
         12.7,
@@ -632,7 +632,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         15.9
       ],
       [
-        "3/12/2004 17:00:00",
+        "3/11/2020 17:00:00",
         2.4,
         133,
         11.7,
@@ -640,7 +640,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         16.9
       ],
       [
-        "3/12/2004 18:00:00",
+        "3/11/2020 18:00:00",
         3.9,
         233,
         19.3,
@@ -648,7 +648,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         15.1
       ],
       [
-        "3/12/2004 19:00:00",
+        "3/11/2020 19:00:00",
         3.7,
         242,
         18.2,
@@ -656,7 +656,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         14.4
       ],
       [
-        "3/12/2004 20:00:00",
+        "3/11/2020 20:00:00",
         6.6,
         488,
         32.6,
@@ -664,7 +664,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         12.9
       ],
       [
-        "3/12/2004 21:00:00",
+        "3/11/2020 21:00:00",
         4.4,
         333,
         20.1,
@@ -672,7 +672,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         12.1
       ],
       [
-        "3/12/2004 22:00:00",
+        "3/11/2020 22:00:00",
         3.5,
         215,
         14.3,
@@ -680,7 +680,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         11
       ],
       [
-        "3/12/2004 23:00:00",
+        "3/11/2020 23:00:00",
         5.4,
         367,
         21.8,
@@ -688,7 +688,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         9.7
       ],
       [
-        "3/13/2004 0:00:00",
+        "3/12/2020 0:00:00",
         2.7,
         122,
         9.6,
@@ -696,7 +696,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         9.5
       ],
       [
-        "3/13/2004 1:00:00",
+        "3/12/2020 1:00:00",
         1.9,
         67,
         7.4,
@@ -704,7 +704,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         9.1
       ],
       [
-        "3/13/2004 2:00:00",
+        "3/12/2020 2:00:00",
         1.6,
         43,
         5.4,
@@ -712,7 +712,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         8.8
       ],
       [
-        "3/13/2004 3:00:00",
+        "3/12/2020 3:00:00",
         1.7,
         46,
         5.4,
@@ -720,7 +720,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         7.8
       ],
       [
-        "3/13/2004 4:00:00",
+        "3/12/2020 4:00:00",
         5,
         56,
         6.2,
@@ -728,7 +728,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         7
       ],
       [
-        "3/13/2004 5:00:00",
+        "3/12/2020 5:00:00",
         1,
         30,
         2.6,
@@ -736,7 +736,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         8.3
       ],
       [
-        "3/13/2004 6:00:00",
+        "3/12/2020 6:00:00",
         1.2,
         27,
         2.9,
@@ -744,7 +744,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         7.2
       ],
       [
-        "3/13/2004 7:00:00",
+        "3/12/2020 7:00:00",
         1.5,
         47,
         5.1,
@@ -752,7 +752,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         6.3
       ],
       [
-        "3/13/2004 8:00:00",
+        "3/12/2020 8:00:00",
         2.7,
         132,
         11.8,
@@ -760,7 +760,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         6.5
       ],
       [
-        "3/13/2004 9:00:00",
+        "3/12/2020 9:00:00",
         3.7,
         239,
         15.1,
@@ -768,7 +768,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         9.6
       ],
       [
-        "3/13/2004 10:00:00",
+        "3/12/2020 10:00:00",
         3.2,
         160,
         12.9,
@@ -776,7 +776,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         12.4
       ],
       [
-        "3/13/2004 11:00:00",
+        "3/12/2020 11:00:00",
         4.1,
         283,
         16.1,
@@ -784,7 +784,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         15.6
       ],
       [
-        "3/13/2004 12:00:00",
+        "3/12/2020 12:00:00",
         3.6,
         210,
         14,
@@ -792,7 +792,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         18.4
       ],
       [
-        "3/13/2004 13:00:00",
+        "3/12/2020 13:00:00",
         2.8,
         154,
         12.3,
@@ -800,7 +800,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         19.4
       ],
       [
-        "3/13/2004 14:00:00",
+        "3/12/2020 14:00:00",
         2,
         112,
         8.6,
@@ -808,7 +808,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         18
       ],
       [
-        "3/13/2004 15:00:00",
+        "3/12/2020 15:00:00",
         2,
         108,
         9.2,
@@ -816,7 +816,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         18.4
       ],
       [
-        "3/13/2004 16:00:00",
+        "3/12/2020 16:00:00",
         2.5,
         111,
         10.2,
@@ -824,7 +824,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         17.6
       ],
       [
-        "3/13/2004 17:00:00",
+        "3/12/2020 17:00:00",
         2.3,
         97,
         10.6,
@@ -832,7 +832,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         16.7
       ],
       [
-        "3/13/2004 18:00:00",
+        "3/12/2020 18:00:00",
         3.2,
         191,
         15.5,
@@ -840,7 +840,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         16.1
       ],
       [
-        "3/13/2004 19:00:00",
+        "3/12/2020 19:00:00",
         4.2,
         258,
         19.6,
@@ -848,7 +848,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         15.8
       ],
       [
-        "3/13/2004 20:00:00",
+        "3/12/2020 20:00:00",
         4.2,
         284,
         19.2,
@@ -856,7 +856,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         15.7
       ],
       [
-        "3/13/2004 21:00:00",
+        "3/12/2020 21:00:00",
         4.2,
         269,
         18.3,
@@ -864,7 +864,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         15.3
       ],
       [
-        "3/13/2004 22:00:00",
+        "3/12/2020 22:00:00",
         3.1,
         180,
         13.1,
@@ -872,132 +872,12 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         14.6
       ],
       [
-        "3/13/2004 23:00:00",
+        "3/12/2020 23:00:00",
         2.6,
         116,
         10.9,
         130,
         14.7
-      ],
-      [
-        "3/14/2004 0:00:00",
-        2.9,
-        93,
-        11,
-        129,
-        13.9
-      ],
-      [
-        "3/14/2004 1:00:00",
-        2.8,
-        131,
-        11.9,
-        119,
-        14.6
-      ],
-      [
-        "3/14/2004 2:00:00",
-        2.5,
-        92,
-        8.6,
-        104,
-        12.5
-      ],
-      [
-        "3/14/2004 3:00:00",
-        2.4,
-        132,
-        9.7,
-        97,
-        11.6
-      ],
-      [
-        "3/14/2004 4:00:00",
-        3,
-        56,
-        5.2,
-        82,
-        12.1
-      ],
-      [
-        "3/14/2004 5:00:00",
-        1.2,
-        32,
-        3.7,
-        70,
-        11.5
-      ],
-      [
-        "3/14/2004 6:00:00",
-        1,
-        29,
-        2.5,
-        63,
-        11.6
-      ],
-      [
-        "3/14/2004 7:00:00",
-        0.9,
-        27,
-        2.4,
-        67,
-        10.4
-      ],
-      [
-        "3/14/2004 8:00:00",
-        1.4,
-        36,
-        4.2,
-        84,
-        11.6
-      ],
-      [
-        "3/14/2004 9:00:00",
-        1.6,
-        57,
-        6.4,
-        83,
-        12.4
-      ],
-      [
-        "3/14/2004 10:00:00",
-        2.2,
-        129,
-        8.6,
-        98,
-        14.5
-      ],
-      [
-        "3/14/2004 11:00:00",
-        2.8,
-        148,
-        10.9,
-        114,
-        16.9
-      ],
-      [
-        "3/14/2004 12:00:00",
-        2.8,
-        145,
-        10.7,
-        119,
-        19.3
-      ],
-      [
-        "3/14/2004 13:00:00",
-        2,
-        93,
-        7.5,
-        104,
-        21.2
-      ],
-      [
-        "3/14/2004 14:00:00",
-        1.8,
-        84,
-        7.5,
-        102,
-        21.4
       ]
     ];
     // fetch(
