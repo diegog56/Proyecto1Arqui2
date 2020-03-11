@@ -14,11 +14,19 @@ export class ApiService {
     return this.http.get(`${this.API_URI}api/Record`);
   }
 
+  getRobberies(){
+    return this.http.get(`${this.API_URI}api/report`);
+  }
+
   getSteps(){
     return this.http.get(`${this.API_URI}api/Steps/`);
   }
 
+  getAverages(){
+    return this.http.get(`${this.API_URI}api/Record/average`);
+  }
+
   getFilteredSteps(start,end,format){
-    return this.http.get(`${this.API_URI}api/Steps/?start=${start}&end=${end}&format=${format}`);
+    return this.http.get(`${this.API_URI}api/Steps/?start=${start}&end=${end}&filtro=${format}`);
   }
 }

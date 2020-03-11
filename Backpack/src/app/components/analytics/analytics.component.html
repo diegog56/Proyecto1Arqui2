@@ -77,7 +77,17 @@
     </ngb-tab>
     <ngb-tab title="Ubicacion">
       <ng-template ngbTabContent>
-        <div #mapContainer id="map"></div>
+        <ngb-tabset [destroyOnHide]="false">
+          <ngb-tab title="Todos">
+            <ng-template ngbTabContent>
+              <div #mapContainer id="map"></div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Mochila Abierta">
+            <ng-template ngbTabContent><div #mapContainerR id="map"></div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
       </ng-template>
           </ngb-tab>
           <ngb-tab title="Relaciones">
