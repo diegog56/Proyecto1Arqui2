@@ -413,12 +413,12 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
     
     this.type = 'timeseries';
     this.width = '100%';
-    this.height = '400';
+    this.height = '1200';
     // This is the dataSource of the chart
     this.dataSource = {
       data: null,
       caption: {
-        text: 'Ritmo Cardiaco'
+        text: 'Sensores'
       },
       yAxis: [
         {
@@ -442,10 +442,65 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
               value: '90'
             }
           ]
+        },{
+          plot: 'Agua',
+          title: 'Agua',
+          format: {
+            suffix: ''
+          },
+          style: {
+            title: {
+              'font-size': '14px'
+            }
+          }
+        },{
+          plot: 'Peso',
+          title: 'Peso',
+          format: {
+            suffix: 'kg'
+          },
+          style: {
+            title: {
+              'font-size': '14px'
+            }
+          }
+        },{
+          plot: 'Posicion',
+          title: 'Posicion',
+          format: {
+            suffix: '°'
+          },
+          style: {
+            title: {
+              'font-size': '14px'
+            }
+          }
+        },{
+          plot: 'Luz',
+          title: 'Luz',
+          format: {
+            suffix: ''
+          },
+          style: {
+            title: {
+              'font-size': '14px'
+            }
+          }
+        },{
+          plot: 'Sonido',
+          title: 'Sonido',
+          format: {
+            suffix: 'dB'
+          },
+          style: {
+            title: {
+              'font-size': '14px'
+            }
+          }
         }
       ]
     };
-    interval(10000);
+    //interval(10000);
     this.fetchData();
   }
 
@@ -468,7 +523,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           }
         }
         for(let data of datasourceforbpm){
-          let x:Array<any> = [data.date.split('T')[0].split('-')[1]+"/"+data.date.split('T')[0].split('-')[2]+"/"+data.date.split('T')[0].split('-')[0]+" "+data.date.split('T')[1].split('.')[0],data.BPM+1];
+          let x:Array<any> = [data.date.split('T')[0].split('-')[1]+"/"+data.date.split('T')[0].split('-')[2]+"/"+data.date.split('T')[0].split('-')[0]+" "+data.date.split('T')[1].split('.')[0],data.BPM+1,data.water,data.weight,data.position, data.luminousIntensity,data.soundIntensity];
           dataFetch.push(x);
         }
         // fetch(
@@ -482,18 +537,21 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           "name": "BPM",
           "type": "number"
       },{
-          "name": "Non methane hydrocarbons (microg/m^3)",
+          "name": "Agua",
           "type": "number"
       },{
-          "name": "Benzene",
+          "name": "Peso",
           "type": "number"
       },{
-          "name": "Nitrogen dioxide",
+          "name": "Posicion",
           "type": "number"
       }, {
-          "name": "Temperature",
+          "name": "Luz",
           "type": "number"
-      }];
+      }, {
+        "name": "Sonido",
+        "type": "number"
+    }];
       Promise.all([dataFetch, schemaFetch]).then(res => {
         const data = res[0];
         const schema = res[1];
