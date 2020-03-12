@@ -197,6 +197,310 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
   //RELACIONES
   //cambio de ejes
   //scatter charts for fusion charts could be ideal, linear regresions
+  relationsdata=[];
+  
+  sensor1:string="Sensor 1";
+  sensor2:string="Sensor 2";
+  scatterchart:any=  {
+      "chart": {
+          "caption": this.sensor1+" vs "+this.sensor2,
+          "subCaption": "Relacion entre sensores",
+          "baseFont": "Helvetica Neue,Arial",
+          "xAxisName": this.sensor1,
+          "yAxisName": this.sensor2,
+          "xAxisMinValue": "23",
+          "xAxisMaxValue": "95",
+          "yNumberSuffix": "$",
+          "xNumberSuffix": "&deg; F",
+          "theme": "fusion"
+      },
+      "categories": [
+          {
+              "verticalLineDashed": "1",
+              "verticalLineDashLen": "1",
+              "verticalLineDashGap": "1",
+              "verticalLineThickness": "1",
+              "verticalLineColor": "#000000",
+              "category": [
+                  {
+                      "x": "23",
+                      "label": "23° F",
+                      "showverticalline": "0"
+                  },
+                  {
+                      "x": "32",
+                      "label": "32° F",
+                      "showverticalline": "1"
+                  },
+                  {
+                      "x": "50",
+                      "label": "50° F",
+                      "showverticalline": "1"
+                  },
+                  {
+                      "x": "68",
+                      "label": "68° F",
+                      "showverticalline": "1"
+                  },
+                  {
+                      "x": "80",
+                      "label": "80° F",
+                      "showverticalline": "1"
+                  },
+                  {
+                      "x": "95",
+                      "label": "95° F",
+                      "showverticalline": "1"
+                  }
+              ]
+          }
+      ],
+      "dataset": [
+          {
+              "seriesname": "Sensor 1 vs Sensor 2",
+              "showregressionline": "1",
+              "data": [
+                  {
+                      "x": "23",
+                      "y": "1560"
+                  },
+                  {
+                      "x": "24",
+                      "y": "1500"
+                  },
+                  {
+                      "x": "24",
+                      "y": "1680"
+                  },
+                  {
+                      "x": "25",
+                      "y": "1780"
+                  },
+                  {
+                      "x": "25",
+                      "y": "1620"
+                  },
+                  {
+                      "x": "26",
+                      "y": "1810"
+                  },
+                  {
+                      "x": "27",
+                      "y": "2310"
+                  },
+                  {
+                      "x": "29",
+                      "y": "2620"
+                  },
+                  {
+                      "x": "31",
+                      "y": "2500"
+                  },
+                  {
+                      "x": "32",
+                      "y": "2410"
+                  },
+                  {
+                      "x": "35",
+                      "y": "2880"
+                  },
+                  {
+                      "x": "36",
+                      "y": "3910"
+                  },
+                  {
+                      "x": "34",
+                      "y": "3960"
+                  },
+                  {
+                      "x": "38",
+                      "y": "4080"
+                  },
+                  {
+                      "x": "40",
+                      "y": "4190"
+                  },
+                  {
+                      "x": "41",
+                      "y": "4170"
+                  },
+                  {
+                      "x": "42",
+                      "y": "4280"
+                  },
+                  {
+                      "x": "54",
+                      "y": "5180"
+                  },
+                  {
+                      "x": "53",
+                      "y": "5770"
+                  },
+                  {
+                      "x": "55",
+                      "y": "5900"
+                  },
+                  {
+                      "x": "56",
+                      "y": "5940"
+                  },
+                  {
+                      "x": "58",
+                      "y": "6090"
+                  },
+                  {
+                      "x": "61",
+                      "y": "6086"
+                  },
+                  {
+                      "x": "67",
+                      "y": "6100"
+                  },
+                  {
+                      "x": "68",
+                      "y": "6200"
+                  },
+                  {
+                      "x": "70",
+                      "y": "6360"
+                  },
+                  {
+                      "x": "75",
+                      "y": "6450"
+                  },
+                  {
+                      "x": "79",
+                      "y": "6650"
+                  },
+                  {
+                      "x": "80",
+                      "y": "6710"
+                  },
+                  {
+                      "x": "79",
+                      "y": "6975"
+                  },
+                  {
+                      "x": "82",
+                      "y": "7000"
+                  },
+                  {
+                      "x": "85",
+                      "y": "7150"
+                  },
+                  {
+                      "x": "86",
+                      "y": "7160"
+                  },
+                  {
+                      "x": "86",
+                      "y": "7200"
+                  },
+                  {
+                      "x": "88",
+                      "y": "7230"
+                  },
+                  {
+                      "x": "87",
+                      "y": "7210"
+                  },
+                  {
+                      "x": "86",
+                      "y": "7480"
+                  },
+                  {
+                      "x": "89",
+                      "y": "7540"
+                  },
+                  {
+                      "x": "89",
+                      "y": "7400"
+                  },
+                  {
+                      "x": "90",
+                      "y": "7500"
+                  },
+                  {
+                      "x": "92",
+                      "y": "7640"
+                  }
+              ]
+          }
+      ],
+      "vtrendlines": [
+          {
+              "line": [
+                  {
+                      "startvalue": "23",
+                      "endvalue": "32",
+                      "istrendzone": "1",
+                      "displayvalue": " ",
+                      "color": "#adebff",
+                      "alpha": "25"
+                  },
+                  {
+                      "startvalue": "23",
+                      "endvalue": "32",
+                      "istrendzone": "1",
+                      "alpha": "0",
+                      "displayvalue": "Very cold"
+                  },
+                  {
+                      "startvalue": "32",
+                      "endvalue": "50",
+                      "istrendzone": "1",
+                      "displayvalue": " ",
+                      "color": "#adebff",
+                      "alpha": "15"
+                  },
+                  {
+                      "startvalue": "32",
+                      "endvalue": "50",
+                      "istrendzone": "1",
+                      "alpha": "0",
+                      "displayvalue": "Cold"
+                  },
+                  {
+                      "startvalue": "50",
+                      "endvalue": "68",
+                      "istrendzone": "1",
+                      "alpha": "0",
+                      "displayvalue": "Moderate"
+                  },
+                  {
+                      "startvalue": "68",
+                      "endvalue": "80",
+                      "istrendzone": "1",
+                      "alpha": "0",
+                      "displayvalue": "Hot"
+                  },
+                  {
+                      "startvalue": "68",
+                      "endvalue": "80",
+                      "istrendzone": "1",
+                      "displayvalue": " ",
+                      "color": "#f2a485",
+                      "alpha": "15"
+                  },
+                  {
+                      "startvalue": "80",
+                      "endvalue": "95",
+                      "istrendzone": "1",
+                      "alpha": "0",
+                      "displayvalue": "Very hot"
+                  },
+                  {
+                      "startvalue": "80",
+                      "endvalue": "95",
+                      "istrendzone": "1",
+                      "displayvalue": " ",
+                      "color": "#f2a485",
+                      "alpha": "25"
+                  }
+              ]
+          }
+      ]
+  }
 
   //Intensidad Luminosa vs Ritmo Cardíaco
 
@@ -369,7 +673,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         }
         this.setMarkers();
         this.mapInitializer();
-        
+        this.setRelation("Ritmo Cardiaco","Luz");
       },
       err => console.log(err) 
     )
@@ -452,7 +756,13 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
             title: {
               'font-size': '14px'
             }
-          }
+          },
+          referenceLine: [
+            {
+              label: 'Peligro debajo',
+              value: '350'
+            }
+          ]
         },{
           plot: 'Peso',
           title: 'Peso',
@@ -583,6 +893,196 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
 
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
+  }
+
+  setRelation(sensor1,sensor2){
+    let s1name,s2name,s1unit,s2unit="";
+    let s1max,s1min,s2max,s2min = 0;
+    switch(sensor1){
+      case "Pasos":
+        s1name="steps";
+        s1unit="pasos";
+        break;
+      case "Ritmo Cardiaco":
+        s1name="BPM";
+        s1unit="BPM";
+        break;
+      case "Peso":
+        s1name="weight";
+        s1unit="kg";
+        break;
+      case "Posicion":
+        s1name="position";
+        s1unit="°";
+        break;
+      case "Luz":
+        s1name="luminousIntensity";
+        s1unit="";
+        break;
+      case "Sonido":
+        s1name="soundIntensity";
+        s1unit="dB";
+        break;
+      case "Agua":
+        s1name="water";
+        s1unit="";
+        break;
+    }
+    switch(sensor2){
+      case "Pasos":
+        s2name="steps";
+        s2unit="pasos";
+        break;
+      case "Ritmo Cardiaco":
+        s2name="BPM";
+        s2unit="BPM";
+        break;
+      case "Peso":
+        s2name="weight";
+        s2unit="kg";
+        break;
+      case "Posicion":
+        s2name="position";
+        s2unit="°";
+        break;
+      case "Luz":
+        s2name="luminousIntensity";
+        s2unit="";
+        break;
+      case "Sonido":
+        s2name="soundIntensity";
+        s2unit="dB";
+        break;
+      case "Agua":
+        s2name="water";
+        s2unit="";
+        break;
+    }
+    s1max=this.getMaxSensor(s1name);
+    s1min=this.getMinSensor(s1name);
+    s2max=this.getMaxSensor(s2name);
+    s2min=this.getMinSensor(s2name);
+    this.scatterchart=  {
+        "chart": {
+            "caption": sensor1+" vs "+sensor2,
+            "subCaption": "Relacion entre sensores",
+            "baseFont": "Helvetica Neue,Arial",
+            "xAxisName": sensor1,
+            "yAxisName": sensor2,
+            "xAxisMinValue": ""+s1min,
+            "xAxisMaxValue": ""+s1max,
+            "yNumberSuffix": s2unit,
+            "xNumberSuffix": s1unit,
+            "theme": "fusion"
+        },
+        "categories": [
+            {
+                "verticalLineDashed": "1",
+                "verticalLineDashLen": "1",
+                "verticalLineDashGap": "1",
+                "verticalLineThickness": "1",
+                "verticalLineColor": "#000000",
+                "category": [
+                  {
+                    "x": "0",
+                    "label": "0 "+s1unit,
+                    "showverticalline": "0"
+                  },
+                  {
+                      "x": ""+((s1max/5)*1),
+                      "label": ((s1max/5)*1)+" "+s1unit,
+                      "showverticalline": "1"
+                  },
+                  {
+                      "x": ""+((s1max/5)*2),
+                      "label": ((s1max/5)*2)+" "+s1unit,
+                      "showverticalline": "1"
+                  },
+                  {
+                      "x": ""+((s1max/5)*3),
+                      "label": ((s1max/5)*3)+" "+s1unit,
+                      "showverticalline": "1"
+                  },
+                  {
+                      "x": ""+((s1max/5)*4),
+                      "label": ((s1max/5)*4)+" "+s1unit,
+                      "showverticalline": "1"
+                  },
+                  {
+                      "x": ""+s1max,
+                      "label": s1max+" "+s1unit,
+                      "showverticalline": "1"
+                  }
+                ]
+            }
+        ],
+        "dataset": [
+            {
+                "seriesname": sensor1+" vs "+sensor2,
+                "showregressionline": "1",
+                "data": []
+            }
+        ],
+        "vtrendlines": [
+            {
+                "line": [
+                    {
+                        "startvalue": "0",
+                        "endvalue": ""+((s1max/5)*1),
+                        "istrendzone": "1",
+                        "displayvalue": " ",
+                        "color": "#adebff",
+                        "alpha": "25"
+                    },
+                    {
+                        "startvalue": ""+((s1max/5)*2),
+                        "endvalue": ""+((s1max/5)*3),
+                        "istrendzone": "1",
+                        "displayvalue": " ",
+                        "color": "#adebff",
+                        "alpha": "15"
+                    },
+                    {
+                        "startvalue": ""+((s1max/5)*3),
+                        "endvalue": ""+((s1max/5)*4),
+                        "istrendzone": "1",
+                        "displayvalue": " ",
+                        "color": "#f2a485",
+                        "alpha": "15"
+                    },
+                    {
+                        "startvalue": ""+((s1max/5)*4),
+                        "endvalue": ""+s1max,
+                        "istrendzone": "1",
+                        "displayvalue": " ",
+                        "color": "#f2a485",
+                        "alpha": "25"
+                    }
+                ]
+            }
+        ]
+    }
+    for(let d of this.fulldata){
+      let point ={"x":d[s1name],"y":d[s2name]};
+      this.scatterchart.dataset[0].data.push(point);
+    }
+    // console.log(this.scatterchart.dataset);
+  }
+
+  getMaxSensor(sensor):number{
+    let max:number=0;
+    for(let d of this.fulldata){
+      if(d[sensor]>max)max=d[sensor];
+    }
+    return max;
+  }
+
+  getMinSensor(sensor){
+    let min:number=10000000000;
+    for(let d of this.fulldata){
+      if(d[sensor]<min)min=d[sensor];
+    }
+    return min;
   }
 
 }
