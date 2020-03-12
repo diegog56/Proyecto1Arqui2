@@ -85,6 +85,7 @@
           </ngb-tab>
           <ngb-tab title="Mochila Abierta">
             <ng-template ngbTabContent><div #mapContainerR id="map"></div>
+              <h3>Mochila Abierta: {{this.robberydata.length}} veces</h3> 
             </ng-template>
           </ngb-tab>
         </ngb-tabset>
@@ -98,6 +99,30 @@
                       height="800"
                       [dataSource]="scatterchart"
                     ></fusioncharts>
+                    <br>
+                    <br>
+                    Eje X:
+                    <select class="btn-primary" [(ngModel)]="xaxis">
+                      <option value="Ritmo Cardiaco" selected>Ritmo Cardiaco</option>
+                      <option value="Pasos">Pasos</option>
+                      <option value="Agua">Agua</option>
+                      <option value="Peso">Peso</option>
+                      <option value="Luz">Luz</option>
+                      <option value="Sonido">Sonido</option>
+                      <option value="Posicion">Peso</option>
+                    </select>
+                    Eje Y:
+                    <select class="btn-primary" [(ngModel)]="yaxis">
+                      <option value="Ritmo Cardiaco">Ritmo Cardiaco</option>
+                      <option value="Pasos" selected>Pasos</option>
+                      <option value="Agua">Agua</option>
+                      <option value="Peso">Peso</option>
+                      <option value="Luz">Luz</option>
+                      <option value="Sonido">Sonido</option>
+                      <option value="Posicion">Posicion</option>
+                    </select>
+                    
+                    <button class="btn btn-success" (click)="graphRelation()">Graficar</button>
             </ng-template>
                 </ngb-tab>
   </ngb-tabset>

@@ -198,6 +198,9 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
   //cambio de ejes
   //scatter charts for fusion charts could be ideal, linear regresions
   relationsdata=[];
+
+  yaxis:string="Pasos";
+  xaxis:string="Ritmo Cardiaco";
   
   sensor1:string="Sensor 1";
   sensor2:string="Sensor 2";
@@ -502,6 +505,10 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
       ]
   }
 
+  graphRelation(){
+    this.setRelation(this.xaxis,this.yaxis);
+  }
+
   //Intensidad Luminosa vs Ritmo Cardíaco
 
   //Postura vs Peso
@@ -673,7 +680,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         }
         this.setMarkers();
         this.mapInitializer();
-        this.setRelation("Ritmo Cardiaco","Luz");
+        this.setRelation("Ritmo Cardiaco","Pasos");
       },
       err => console.log(err) 
     )
