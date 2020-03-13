@@ -18,7 +18,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
   public radarChartOptions: RadialChartOptions = {
     responsive: true,
   };
-  public radarChartLabels: Label[] = ['Pasos', 'BPM x 10', 'Peso (kg)', 'Posicion(°) x 10', 'Luz x 3', 'Sonido(dB) x 10', 'Agua x 20'];
+  public radarChartLabels: Label[] = ['Pasos', 'BPM x 10', 'Peso (kg)', 'Posicion(°) x 10', 'Luz(lux) x 3', 'Sonido(dB) x 10', 'Agua(hr) x 20'];
 
   public radarChartData: ChartDataSets[] = [
     { data: [], label: 'Promedio' }
@@ -757,7 +757,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           plot: 'Agua',
           title: 'Agua',
           format: {
-            suffix: ''
+            suffix: 'hr'
           },
           style: {
             title: {
@@ -796,7 +796,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
           plot: 'Luz',
           title: 'Luz',
           format: {
-            suffix: ''
+            suffix: 'lux'
           },
           style: {
             title: {
@@ -924,7 +924,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         break;
       case "Luz":
         s1name="luminousIntensity";
-        s1unit="";
+        s1unit="lux";
         break;
       case "Sonido":
         s1name="soundIntensity";
@@ -932,7 +932,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         break;
       case "Agua":
         s1name="water";
-        s1unit="";
+        s1unit="hr";
         break;
     }
     switch(sensor2){
@@ -954,7 +954,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         break;
       case "Luz":
         s2name="luminousIntensity";
-        s2unit="";
+        s2unit="lux";
         break;
       case "Sonido":
         s2name="soundIntensity";
@@ -962,7 +962,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit {
         break;
       case "Agua":
         s2name="water";
-        s2unit="";
+        s2unit="hr";
         break;
     }
     s1max=this.getMaxSensor(s1name);
