@@ -8,8 +8,7 @@ import { webSocket } from 'rxjs/webSocket';
 })
 export class NavbarComponent implements OnInit {
   toggle: boolean;
-  url = 'ws://localhost:3000/';
-  url2 = 'ws://18.222.157.241:3000/';
+  url = 'ws://18.222.157.241:3000/';
   subject = webSocket(this.url);
   constructor() { }
 
