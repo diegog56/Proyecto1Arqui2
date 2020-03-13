@@ -6,14 +6,14 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  modoantirrobo:boolean;
+  toggle: boolean;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  checkModo(){
-    console.log(this.modoantirrobo);
+  onclick(){
+    console.log('working');
+    this.toggle = !this.toggle;
   }
-
 }
