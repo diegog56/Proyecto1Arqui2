@@ -14,9 +14,8 @@
       <!-- <li class="nav-item">
           <a class="nav-link" href="/doc"><i class="fas fa-info"></i> Documentacion</a>
       </li> -->
-      <li class="nav-item">
-        <i class="fas fa-ghost"></i> Antirrobo 
-          <input type="checkbox" checked="modoantirrobo" data-toggle="toggle" data-on="Encendido" data-off="Apagado" data-onstyle="success" data-offstyle="danger">
+      <li class="nav-item" [ngStyle]="{ 'background-color' : toggle ? 'red' : 'green' }">
+        <a class="nav-link" (click)="onclick()"><i class="fas fa-ghost"></i> Antirrobo </a>
       </li>
     </ul>
   </div>
